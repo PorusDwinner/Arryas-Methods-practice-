@@ -1,3 +1,5 @@
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 //concatinations of two arrays
 const a1 ="Amit";
 const a2 =" Saini";
@@ -17,7 +19,7 @@ console.log(index);
 const ages=[23,25,26,34,25,9,1,5,67];
 const philter=ages.filter(checkVoter);      //in the brackets of filter function we have passes a paramerter checkVoter
     function checkVoter(voter) {            //checkVoter is a functin defined in this line according to which ages will be filtered out
-                                            //filter() function doesnt know what to filter so always we have to define a function to tell what to filter        
+                                           //filter() function doesnt know what to filter so always we have to define a function to tell what to filter        
     return voter>=18;
     }
 console.log(philter); 
@@ -35,7 +37,7 @@ console.log(checknumb);
 
 var oddy=[12,3,62,5,144,6,7,8,95,45];     //In this example we have created the function first and then invoked it in filter function parameter unlike above two examples
 function ifodd(numby){
-    return numby%2!==0;                   //checking odd no. with not equals to !==
+    return numby%2!=0;                   //checking odd no. with not equals to !==
 }
 oddy=oddy.filter(ifodd);                  // this is we are overriding the orignal array but this overriding will not work with const array declearation
 console.log(oddy);
@@ -101,6 +103,14 @@ console.log(samplearr2.map(x=> x*2));                       //each element is ma
 const samplearr3=["Shree Ram","Shree Krishna","Mahakal"];       // concating wiht each element of array using map()
 console.log(samplearr3.map(x=>"Jai "+x));
 
+//example 3
+const heros = [ { name: 'Spider-Man' }, { name: 'Thor' }, { name: 'Black Panther' },
+ { name: 'Captain Marvel' }, { name: 'Silver Surfer' } ];
+
+ const arraynew = heros.map((herosEle, index)=>{        //'herosEle' is the one element of the array for each iteration
+    return { id : index , hero : herosEle.name};         //we are returning an object here, id and hero are new key defined then index and herosEle.name are the values respectively
+ })
+console.log(arraynew);
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const abc=[87,965,51,5,1,5659,66];                          //sorting numbers in ascending order
@@ -122,11 +132,46 @@ console.log(io);
 console.log(io.slice(1,3));      //returns only the sliced element only
 
 const iop=[7,8,4,5,6,9,1,23,6,5,];
-console.log(iop.splice(2,1,"hello"));   //this will only return the deleted element
-console.log(iop);
+console.log(iop.splice(2,1,"hello"));   //this will only return the deleted element, splice() can be used to add element to specific index and deleting element of specific indexes
+console.log(iop);                       //this will show the array the added element of the array
 
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Ques. converting all array element into one string and their concatination
+let myColor = ["Red", "Green", "White", "Black"];
+console.log(myColor.toString());                                // arr.toString() to convert array element into one single string
+console.log(myColor.join("+"));                                 // join() function to concatinate all the sring element, further '+' is used as a paratmerter(seprator)
 
+//Ques. convertig each element of the array in upper case
+let strngs = ["avengers", "captain america", "ironman", "black panther"];
+let n = strngs.map((ele ,index)=>{
+            return ele.toUpperCase();
+})
+console.log(n);
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+//reduce() function
+const arr=[1,2,3,4,5,6,7,8,9];
+const sum =arr.reduce((accum, currval)=>{
+    return accum + currval;             //sum of all the elements of the array
+})
+console.log(sum);
+const product = arr.reduce((accum, currval)=>{
+    return accum*currval;               // product of all the elements of the array
+})
+console.log(product);
+
+//finding avg using reduce function
+const avg = arr.reduce((accum , currval , index , array)=>{
+    let total = accum+= currval;            //storing the sum of all elements in the variable 'total'     
+        if(index === arr.length -1){        //This condition  is neccessary otherwise on each iteration the sum will be get diveded by the length of the array
+           return total/arr.length;         //once the if condition is satisfied then sum of elements('total') can be divide with the array length 
+            }
+    return total;
+})
+console.log(avg);
+
+//-------------------------------------------------------------------------------------------------------------
 
 
 
