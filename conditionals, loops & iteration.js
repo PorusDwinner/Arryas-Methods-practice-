@@ -70,7 +70,7 @@ if(nm[3]>nm[1] && nm[3]>nm[2] && nm[3]>nm[0] && nm[3]>nm[4]){
 }
 if(nm[4]>nm[1] && nm[4]>nm[2] && nm[4]>nm[3] && nm[4]>nm[0]){
   console.log(nm[4])
-}     */
+}   */  
 
 //5. For each iteration, it will check if the current number is odd or even
 /*let i = 0;
@@ -98,7 +98,7 @@ if(average<60){console.log("Gradde : F")}
 else if(average<70){console.log("Gradde : D")}
 else if(average<80){console.log("Gradde : C")}
 else if(average<90){console.log("Gradde : B")}
-else if(average<100){console.log("Gradde : A")}          */      
+else if(average<100){console.log("Gradde : A")}*/
 
 //7. Write a JavaScript program which iterates the integers from 1 to 100. 
 //But for multiples of 3, print "Fizz" instead of the number and for the multiples of 5, print "Buzz". 
@@ -112,7 +112,7 @@ else if(average<100){console.log("Gradde : A")}          */
     console.log(i + " Buzz")
   }
   else if(i%15==0){console.log(i + " FizzBuzz")}
-}   */                                                          
+}*/
 
 //8.Finding armstrong no.
 

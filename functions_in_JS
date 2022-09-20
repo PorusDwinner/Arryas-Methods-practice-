@@ -1,0 +1,212 @@
+//1. Write a function called randomGame that selects a random number between 0 and 1 every 1000 milliseconds 
+//each time that a random number is picked, add 1 to a counter. If the number is greater than 45, stop the 
+//timer and console.log the number of tries it took before we found a number greater than 45.
+
+/*function randomGame(){
+let num , times = 0;
+let timer = setInterval(function(){
+    num = Math.random();
+    times++;
+        if(num>45){
+            console.log("It tooks "+ times + "chances");
+        }
+
+})
+}
+randomGame();   */
+
+//2 . Implement a javascript function as sum(1)(2)(3) which should sum the numbers and give 6 as an output
+
+/*function sum(x,y,z){
+    return x+y+z;
+}
+console.log(sum(1,2,3));
+
+//          OR
+
+function sumbation(i){
+    return function(j){
+        return function(k){
+            return i+j+k;
+        }
+    }
+}
+console.log(sumbation(1)(2)(3));    */
+
+// 3.Create a javascript function called countdown that accepts a number argument and starts a countdown up till that 
+//numeric value has become zero and on value becoming zero it should log “DONE” on the console.
+
+/*function countdown(num){
+    let timer = setInterval(function(){
+        if(num<=0){
+            console.log("DONE")
+            clearInterval(timer)
+            
+        }
+        else {console.log(num)}
+        num--
+    },1000)
+}
+countdown(5);*/
+
+/*function countdown2(x){
+    let timer2 = setInterval(function(){
+        if(x<=0){
+            console.log("click to start Race")
+            clearInterval(timer2)
+        }else{console.log(x)}
+        x--
+    },1000)
+}
+countdown2(3)*/
+
+//4. Create a javascript function that flattens a multidimensional array to a one-dimensional array.
+
+/*const input = [1,[2,[3,[4,[5,[6,[7]]]]]]];*/
+
+
+//5. Write a JavaScript function that reverse a number.
+/*function reverse_a_number(n){
+    n = n + "";                            //This will make the no. a string without adding an element(we can use toString() also)
+	return n.split('').reverse().join('')   //split() will split the numeric string in single elements
+}                                           //reverse() will reverse the order of numeric string and join will join the 
+                                            // reversed numeric string again in a single string element 
+console.log(Number(reverse_a_number(12345)))  *///Number() will convert the string in a number again
+
+//6.Write a JavaScript function that checks whether a passed string is palindrome or not?
+
+/*var str = 'nitin';
+var strReversed = str.split('').reverse().join(''); //spliting, reversing the order and then joining each element to make it a single string
+for(var i =0 ; i<str.length ; i++)                  //loop to compare the indexes of orignal stirng and the new reversed string                        
+if(str[i]===strReversed[i]){
+    console.log("Palindrome")
+}else{console.log("Not Palindrome")}    */
+
+//                  solving palindrome problem by creating a function
+
+/*function checkPalindrom(str){
+    let strReversed = str.split('').reverse().join('');
+    for(var i=0 ; i<str.length ; i++){
+        if(str[i]===strReversed[i]){
+            console.log("It's Palindrome")
+        }else{console.log("It's not a Palindrome")}
+    }
+}
+checkPalindrom("nitin")     */
+
+//7. Write a JavaScript function that generates all combinations of a string.
+
+/*let inputString = (str)=>{
+    let permutatedString = [];
+    for(var i = 0 ; i<str.length ; i++){
+        for(var j = i + 1 ; j<str.length+1  ; j++){
+            permutatedString.push(str.slice(i , j))
+        }
+    }
+return permutatedString;
+}
+console.log(inputString('abc')) */
+
+//8.Write a JavaScript function that returns a passed string with letters in alphabetical order.
+
+/*function sorting(str){
+    return str.split('').sort().join('')
+}
+console.log(sorting('foihfsdiobnoi'))   */
+
+//9.Write a JavaScript function that accepts a string as a parameter and converts the first 
+//letter of each word of the string in upper case.
+
+/* This Program is not working
+function uppercase(str){
+    var arr =str.split('')
+    var newarr= []
+        for(var i = 0 ; i < str.length ; i++){
+            newarr.push(arr[i].charAt(0).toUpperCase() + arr[i].slice(1))
+        }
+        return newarr.join('')
+}
+console.log(uppercase("the quick brown fox"))   */
+
+//10.Write a JavaScript function that accepts a string as a parameter and find the longest
+//word within the string.
+
+
+//                                 PENDING
+
+
+//11. Write a JavaScript function that accepts a number as a parameter and check the number is prime or not.
+
+/*let isPrime = true;
+function num(n){
+    if(n == 1){                                             
+        console.log("Neither Prime nor Composite")
+    }
+    if(n > 1){
+        for(var i =2 ; i < n ; i++){                //i=2 is the startig point of the loop bcoz 1 we have checked already 
+            if(n % i == 0){
+                isPrime = false
+                break ;
+            }    
+        }
+    if(isPrime){
+        console.log( n +" is a Prime No.")
+    }else{console.log(n + " is not a Prime No.")}
+    }
+    
+
+}
+num(7);         */
+
+//12. Write a JavaScript function which accepts an argument and returns the type.
+
+/*function argument(arg){
+    console.log(typeof(arg))
+}
+argument(false);    */
+
+//13. Write a JavaScript function which returns the n rows by n columns identity matrix.
+
+/*function matrix(n){
+    let i , j ;
+    for(i = 0 ; i < n ; i++){
+        for(j = 0 ; j < n ; j++){
+            if(i == j){
+                console.log("1")
+            }
+            else { console.log("0")}
+        }
+    console.log("--------------")
+    }
+}
+matrix(4)       */
+
+//14. Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively
+
+
+//                          PENDING      
+
+
+//15. Write a JavaScript function which says whether a number is perfect.
+
+let divisorStore1 = []
+function checkPerfect(n){
+    for(var i = 0 ; i < n ; i++){
+        if(n < 0){
+            console.log(n + " is a Perfect no.")
+        }
+        else if( n % i == 0){
+            divisorStore1 = i
+        }
+    }
+console.log(divisorStore1)
+}
+checkPerfect(6)
+    /* let sumOfStore = divisorStore1.reduce((acc , curval)=>{
+    return acc + curval
+})
+if(n == sumOfStore){
+    console.log(n + " is a Perfect no.")
+}
+}
+checkPerfect(28) */
